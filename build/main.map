@@ -201,23 +201,23 @@ END GROUP
                 0x00000000000000a6                __vector_14
                 0x00000000000000a6                __vector_16
                 0x00000000000000a6                __vector_20
- .text          0x00000000000000aa       0xf2 build/main.o
+ .text          0x00000000000000aa       0xf6 build/main.o
                 0x00000000000000aa                initButton
                 0x00000000000000ba                buttonScript
-                0x00000000000000e8                __vector_7
-                0x000000000000013c                __vector_10
-                0x0000000000000190                handleCANmsg
- .text          0x000000000000019c      0x26c build/api.o
-                0x000000000000019c                initCAN
-                0x000000000000022e                readMsg
-                0x00000000000002e6                sendCANmsg
-                0x000000000000036e                __vector_18
- .text          0x0000000000000408        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
- .text          0x0000000000000408        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
-                0x0000000000000408                . = ALIGN (0x2)
+                0x00000000000000ec                __vector_7
+                0x0000000000000140                __vector_10
+                0x0000000000000194                handleCANmsg
+ .text          0x00000000000001a0      0x26c build/api.o
+                0x00000000000001a0                initCAN
+                0x0000000000000232                readMsg
+                0x00000000000002ea                sendCANmsg
+                0x0000000000000372                __vector_18
+ .text          0x000000000000040c        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text          0x000000000000040c        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+                0x000000000000040c                . = ALIGN (0x2)
  *(.text.*)
- .text.startup  0x0000000000000408       0x1e build/main.o
-                0x0000000000000408                main
+ .text.startup  0x000000000000040c       0x1a build/main.o
+                0x000000000000040c                main
  .text.libgcc.mul
                 0x0000000000000426        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
  .text.libgcc.div
@@ -330,12 +330,12 @@ END GROUP
 .user_signatures
  *(.user_signatures*)
 
-.stab           0x0000000000000000     0x162c
+.stab           0x0000000000000000     0x1620
  *(.stab)
  .stab          0x0000000000000000      0x6cc /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm16m1.o
- .stab          0x00000000000006cc      0x7e0 build/main.o
-                                        0x7ec (size before relaxing)
- .stab          0x0000000000000eac      0x780 build/api.o
+ .stab          0x00000000000006cc      0x7d4 build/main.o
+                                        0x7e0 (size before relaxing)
+ .stab          0x0000000000000ea0      0x780 build/api.o
                                         0x99c (size before relaxing)
 
 .stabstr        0x0000000000000000      0xef5

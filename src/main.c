@@ -28,8 +28,11 @@ char cSREG = SREG; //Store SREG
     uint8_t msg[1];
     if (val) {
         msg[0] = x; // turn top LED on
-        sendCANmsg(target, MSG_demoMsg, msg, 1);
     }
+    else{
+        msg[0] = 0x00;
+    }
+sendCANmsg(target, MSG_demoMsg, msg, 1);
 SREG = cSREG;
 }
 
@@ -38,7 +41,7 @@ ISR(INT0_vect) {
 }
 
 ISR(INT3_vect) {
-    buttonScript(NODE_ble, PINC & _BV(PC0), 0x00);
+    buttonScript(NODE_ble, PINC & _BV(PC0), 0xFF);
 }
 
 // TODO: change this method for each of the demo nodes
@@ -54,10 +57,10 @@ int main (void) {
     DDRC &= ~(_BV(PC0)); // set pin 30 for input
     DDRD &= ~(_BV(PD6)); // set pin 14 for input
 
-    // Setting PE1 and PE2. XTAL1 to input and XTAL2 to ouput . Pins 10 and 11
+    /*// Setting PE1 and PE2. XTAL1 to input and XTAL2 to ouput . Pins 10 and 11
     DDRE |= _BV(PE2);
     DDRE &= ~(_BV(PE1));
-
+*/
     sei(); // enable global interrupts
     initCAN(NODE_HOME); // initialize CAN bus
     initButton(); // intitialize button interrupts
