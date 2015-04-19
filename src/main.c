@@ -28,11 +28,11 @@ char cSREG = SREG; //Store SREG
     uint8_t msg[1];
     if (val) {
         msg[0] = x; // turn top LED on
+        sendCANmsg(target, MSG_demoMsg, msg, 1);
     }
-    else{
+/*    else{
         msg[0] = 0x00;
-    }
-sendCANmsg(target, MSG_demoMsg, msg, 1);
+    }*/
 SREG = cSREG;
 }
 
